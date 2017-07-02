@@ -2,7 +2,9 @@
 Google ortools binaries and their dependencies, processed for the Python 3.6 runtime on AWS Lambda
 
 # Instructions to use as-is
-Download as zip  
+Download the repo
+AWS Lambda requires the lambda_function to be at the root level of a zip. Github adds a master folder on top. So download the files, and zip locally from your terminal
+You can inspect the structure in bash with $ zipinfo file.zip
 Upload to AWS Lambda  
 Confirm the response equals  
     {
