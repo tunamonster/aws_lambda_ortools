@@ -2,11 +2,11 @@
 Google ortools binaries and their dependencies, processed for the Python 3.6 runtime on AWS Lambda
 
 # Instructions to use as-is
-Download the repo
-AWS Lambda requires the lambda_function to be at the root level of a zip. Github adds a master folder on top. So download the files, and zip locally from your terminal
+Download the repo.  
+AWS Lambda requires the lambda_function to be at the root level of a zip. Github adds a master folder on top. So download the files, and zip locally from your terminal.
 You can inspect the structure in bash with $ zipinfo file.zip
-Upload to AWS Lambda  
-Confirm the response equals  
+Upload to AWS Lambda.  
+Confirm the response equals:  
     {
       "statusCode": "200",
       "body": "\"[0, 7, 2, 3, 4, 12, 6, 8, 1, 11, 10, 5, 9]\"",
@@ -19,7 +19,7 @@ Modify lambda_function.py code as desired.
 # Guidelines to recreate from scratch
   Launch an EC2 instance with Amazon's latest Linux image.  
   Install miniconda.  
-  Create an environment running python 3.6  
+  Create an environment running python 3.6.  
   easy_install py3-ortools  
   Create a $folder to bundle your files in  
   Find and move the top level files from the .egg folders to $folder for:  
@@ -27,7 +27,7 @@ Modify lambda_function.py code as desired.
 * six  
 * py3-ortools  
 
-> Example: $mv /home/ec2-user/miniconda3/envs/py36/lib/python3.6/site-packages/six-1.10.0-py3.6.egg /home/ec2-user/lambda_libs/ort_binaries
+> Example: $mv /home/ec2-user/miniconda3/envs/py36/lib/python3.6/site-packages/six-1.10.0-py3.6.egg/. /home/ec2-user/lambda_libs/ortools
   
 Now you should have the same files as in the repo. Ortools will run on your ec2 instance, but not on lambda, due to permission restrictions.  
   
